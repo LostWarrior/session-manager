@@ -1,0 +1,525 @@
+:root {
+  color-scheme: light dark;
+  --paper: #f7f6f2;
+  --surface: #fff;
+  --ink: #242e2a;
+  --muted: #647168;
+  --line: #d9dfd8;
+  --accent: #235f46;
+  --tint: #e8eee8;
+  font-family: 'Avenir Next', 'Segoe UI', sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  /* Chromium defaults extension pages to 75%; pin it so Firefox matches. */
+  font-size: 12px;
+}
+
+button, input, select, .file-button {
+  font: inherit;
+}
+
+button, .file-button, .actions a {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+button:hover, .file-button:hover, .actions a:hover {
+  background: var(--tint);
+}
+
+button:disabled {
+  opacity: .55;
+  cursor: wait;
+}
+
+button.primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+button.primary:hover {
+  filter: brightness(1.12);
+}
+
+button.secondary {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible, .file-button:focus-within {
+  outline: 3px solid #b27428;
+  outline-offset: 3px;
+}
+
+input, select {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 11px 12px;
+  min-width: 0;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+h1 {
+  font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -.045em;
+  line-height: 1.12;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .17em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+footer {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 28px;
+}
+
+#status {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  min-height: 22px;
+  overflow-wrap: anywhere;
+}
+
+.popup {
+  width: 360px;
+  padding: 26px;
+}
+
+.popup h1 {
+  font-size: 34px;
+  margin: 17px 0 25px;
+}
+
+.popup form {
+  display: grid;
+  gap: 9px;
+}
+
+.popup form button {
+  margin-top: 7px;
+}
+
+.popup footer {
+  margin-top: 17px;
+  text-align: center;
+  font-size: 11px;
+}
+
+.library {
+  display: grid;
+  grid-template-columns: 225px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+aside {
+  padding: 36px 22px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 52px;
+}
+
+.brand span {
+  color: var(--accent);
+  font-size: 24px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+nav {
+  display: grid;
+  gap: 6px;
+}
+
+nav button {
+  text-align: left;
+  background: transparent;
+  border-color: transparent;
+}
+
+nav [aria-current] {
+  background: var(--tint);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.pin-hint {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 18px;
+  padding: 12px 14px;
+  background: var(--tint);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.pin-hint p {
+  flex: 1;
+  margin: 0;
+}
+
+.pin-hint button {
+  flex: none;
+  padding: 6px 12px;
+}
+
+.popup .pin-hint {
+  margin: 18px 0 0;
+}
+
+.sidebar-note {
+  margin-top: auto;
+  padding-top: 70px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.sidebar-note a {
+  color: var(--muted);
+}
+
+.dot {
+  display: inline-block;
+  background: var(--accent);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+main {
+  padding: 48px clamp(24px, 5vw, 80px);
+  max-width: 1440px;
+}
+
+.page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.heading-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.page-heading h1 {
+  font-size: clamp(36px, 4vw, 54px);
+  margin: 10px 0 28px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.toolbar input[type=search] {
+  flex: 1;
+}
+
+.search-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.file-button {
+  position: relative;
+  overflow: hidden;
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.file-button.busy {
+  cursor: wait;
+  opacity: .8;
+}
+
+.file-button.busy::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 8px;
+  vertical-align: -0.15em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+
+.file-button.busy input {
+  cursor: wait;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .file-button.busy::before {
+    animation: none;
+    border-right-color: currentColor;
+    opacity: .5;
+  }
+}
+
+.file-button input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.session, .bookmark {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.session-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 8px;
+  overflow-wrap: anywhere;
+}
+
+.bookmark-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.bookmark-top {
+  margin-bottom: 8px;
+}
+
+.bookmark-top h2, .bookmark-top .meta {
+  margin: 0;
+}
+
+.bookmark-top .meta {
+  flex-shrink: 0;
+  max-width: 40%;
+  text-align: right;
+}
+
+.meta, .url {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.actions {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  align-items: start;
+}
+
+.actions button, .actions a {
+  font-size: 12px;
+  padding: 7px 10px;
+}
+
+/* Links in action rows navigate but match the neighbouring buttons. */
+.actions a {
+  display: inline-block;
+  text-decoration: none;
+  line-height: normal;
+}
+
+details {
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+summary {
+  cursor: pointer;
+  color: var(--muted);
+}
+
+details ul {
+  padding-left: 22px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+details a {
+  color: var(--accent);
+}
+
+.empty {
+  padding: 70px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty h2 {
+  color: var(--ink);
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+#bookmark-tools {
+  padding: 16px 0;
+}
+
+#bookmark-form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#bookmark-form .form-note, #bookmark-form .form-actions {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+#bookmark-form[hidden], [hidden] {
+  display: none !important;
+}
+
+@media (max-width: 800px) {
+  .library {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 18px;
+  }
+
+  .brand {
+    margin-bottom: 12px;
+  }
+
+  aside .eyebrow, .sidebar-note {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  main {
+    padding: 24px 18px;
+  }
+
+  .toolbar {
+    flex-wrap: wrap;
+  }
+
+  .toolbar input[type=search] {
+    flex-basis: 100%;
+  }
+
+  .session-top {
+    flex-direction: column;
+  }
+
+  .bookmark-top {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .bookmark-top .meta {
+    max-width: none;
+    text-align: left;
+  }
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1b221f;
+    --surface: #222c26;
+    --ink: #e7ece6;
+    --muted: #a5b4a8;
+    --line: #3d4b41;
+    --accent: #39835f;
+    --tint: #2c3c31;
+  }
+
+  details a {
+    color: #96ceae;
+  }
+
+  nav [aria-current] {
+    color: #a8dcbc;
+  }
+
+}
+
+.show-more {
+  display: block;
+  margin: 18px auto 0;
+}

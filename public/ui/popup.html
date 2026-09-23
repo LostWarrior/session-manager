@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Session Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="popup.js"></script>
+  </head>
+  <body class="popup">
+    <header><p class="eyebrow">Session Manager</p><h1>Pick up where<br>you left off.</h1></header>
+    <form id="save-form">
+      <label for="name">Session name</label>
+      <input id="name" required placeholder="What are you working on?" autofocus>
+      <label for="scope">Save from</label>
+      <select id="scope"><option value="current">Current window</option><option value="all">All windows</option></select>
+      <button class="primary" type="submit">Save session</button>
+    </form>
+    <div id="pin-hint"></div>
+    <p id="status" role="status" aria-live="polite">Only regular HTTP and HTTPS tabs are saved.</p>
+    <button id="library" class="secondary">Open your library <span aria-hidden="true">↗</span></button>
+    <footer>Stored on this device. No account needed.</footer>
+  </body>
+</html>

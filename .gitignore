@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.build/
+artifacts/
+web-ext-artifacts/
+*.tsbuildinfo
+.DS_Store
+
+# Local-only files
+AGENTS.md
+*.tmp.mjs

@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Session Manager",
+  "description": "Save browsing sessions locally and manage your browser bookmarks.",
+  "permissions": ["tabs"],
+  "optional_permissions": ["bookmarks"],
+  "incognito": "not_allowed",
+  "background": {"scripts": ["background/index.js"], "type": "module"},
+  "icons": {"16": "icons/icon-16.png", "32": "icons/icon-32.png", "48": "icons/icon-48.png", "128": "icons/icon-128.png"},
+  "action": {"default_popup": "ui/popup.html", "default_title": "Save session", "default_icon": {"16": "icons/icon-16.png", "32": "icons/icon-32.png", "48": "icons/icon-48.png", "128": "icons/icon-128.png"}, "default_area": "navbar"},
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{551cff63-e312-4a09-baff-da2c950f3588}",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {"required": ["none"]}
+    }
+  },
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'none'; connect-src 'none'"}
+}

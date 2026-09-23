@@ -1,0 +1,7 @@
+{
+  "categories": {"firefox": ["bookmarks"]},
+  "summary": {"en-US": "Save your open tabs as sessions, restore them later, and manage your bookmarks. Everything stays on your device."},
+  "description": {"en-US": "Save all open windows as a named session and restore it later in new windows. Search, favorite, rename, and trash sessions, and export or import them as JSON backups. Optionally manage your existing bookmarks.\n\nPrivacy: no accounts, no analytics, and no network requests. Sessions are stored locally in your browser. Private-window tabs are never saved."},
+  "version": {"license": "MIT"},
+  "requires_payment": false
+}

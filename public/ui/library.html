@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your library · Session Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="library.js"></script>
+  </head>
+  <body class="library">
+    <aside>
+      <a class="brand" href="library.html"><span aria-hidden="true">▤</span> Session Manager</a>
+      <p class="eyebrow">Your library</p>
+      <nav aria-label="Library sections">
+        <button data-view="sessions" aria-current="page">Sessions</button>
+        <button data-view="favorites">Favorites</button>
+        <button data-view="bookmarks">Bookmarks</button>
+        <button data-view="trash">Trash</button>
+      </nav>
+      <div class="sidebar-note"><span class="dot" aria-hidden="true"></span> Local to this browser<p>Export a copy to back up your sessions or move them to another browser.</p><a href="https://lostwarrior.github.io/session-manager-web/privacy/" target="_blank" rel="noopener noreferrer">Privacy policy</a></div>
+    </aside>
+    <main>
+      <header class="page-heading"><div><p class="eyebrow">Pick up where you left off</p><h1 id="heading" tabindex="-1">Your sessions</h1></div><div class="heading-actions"><button id="add-bookmark" aria-expanded="false" aria-controls="bookmark-form" hidden>Add bookmark</button><button id="save" class="primary">Save open tabs</button></div></header>
+      <div id="pin-hint"></div>
+      <div class="toolbar">
+        <label class="search-label" for="search">Search library</label>
+        <input id="search" type="search" placeholder="Search names, titles, or URLs…">
+        <button id="refresh">Refresh</button><button id="export">Export</button>
+        <button id="empty-trash" hidden>Empty trash</button>
+        <label id="import-button" class="file-button"><span id="import-label">Import</span><input id="import" type="file"></label>
+      </div>
+      <p id="status" role="status" aria-live="polite">Loading your library…</p>
+      <section id="bookmark-tools" hidden>
+        <button id="enable-bookmarks" class="primary">Enable bookmark access</button>
+        <form id="bookmark-form" hidden>
+          <p class="form-note">Bookmark edits also change this browser’s bookmark library.</p>
+          <label for="bookmark-title">Title</label><input id="bookmark-title" required>
+          <label for="bookmark-url">URL</label><input id="bookmark-url" type="url" placeholder="https://" required>
+          <label for="bookmark-folder">Folder</label><select id="bookmark-folder"></select>
+          <div class="form-actions"><button type="submit" class="primary">Save bookmark</button><button type="button" id="cancel-bookmark">Cancel</button></div>
+        </form>
+      </section>
+      <section id="items" aria-label="Library items"></section>
+    </main>
+  </body>
+</html>
